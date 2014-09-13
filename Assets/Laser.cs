@@ -9,7 +9,8 @@ public class Laser : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		dir = target.position - transform.position;
+		Vector3 v1 = new Vector3 (target.position.x,target.position.y+2,target.position.z);
+		dir = v1 - transform.position;
 	}
 	
 	// Update is called once per frame
