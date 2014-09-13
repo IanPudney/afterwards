@@ -93,10 +93,10 @@ public class JointOrientation : MonoBehaviour
         }
 
 		// Adjust vertically given horizontal rotation
-		Vector3 newPosition = new Vector3 (transform.position.x,
+		/*Vector3 newPosition = new Vector3 (transform.position.x,
 		                                   transform.rotation.x*-8,
 		                                   transform.position.z);
-		transform.position = newPosition;
+		transform.position = newPosition;*/
     }
     
     // Compute the angle of rotation clockwise about the forward axis relative to the provided zero roll direction.
