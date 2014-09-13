@@ -48,6 +48,7 @@ public class Blade : MonoBehaviour
 				thalmicMyo.Vibrate (VibrationType.Medium);
 				state = 1;
 				Debug.Log ("Posed!");
+				JointOrientation.gameRunning = true;
 			} 
 		}
 		Extend ();
