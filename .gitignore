@@ -1,4 +1,5 @@
 Temp/
 Library/metadata/
 *.meta
+/Library/ShaderCache/
 
