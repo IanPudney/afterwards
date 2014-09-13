@@ -18,15 +18,23 @@ public class Droid : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//bounce
 		velocity += Random.insideUnitSphere * speed;
 		velocity = new Vector3 (velocity.x,
 		                       velocity.y,
 		                       0);
+		Debug.Log (velocity.ToString ());
 		transform.position += velocity;
-		if ((transform.position - initialPos).magnitude > 10) {
-			velocity *= -1;
-			transform.position += 2*velocity;
+		Vector3 radiusVector = transform.position - initialPos;
+		if (radiusVector.magnitude > 10) {
+			transform.position -= velocity;
+			Debug.Log ("Boom " + velocity.ToString());
+			float magnitude = velocity.magnitude;
+			velocity = Random.insideUnitSphere * magnitude;
+			Debug.Log ("Boom2 " + velocity.ToString());
 		}
+
+		//shot
 		timeUntilShot -= Time.deltaTime;
 		if (timeUntilShot < 0) {
 			GameObject l = (GameObject)Instantiate(laser, transform.position, Quaternion.identity);
