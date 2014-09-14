@@ -17,6 +17,7 @@ public class Deflect : MonoBehaviour {
 		ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo> ();
 		try {
 			thalmicMyo.Vibrate (VibrationType.Short);
+			this.audio.Play ();
 		} catch (NullReferenceException ex) {
 			/*...*/
 		}

@@ -21,8 +21,10 @@ public class Laser : MonoBehaviour {
 			Debug.Log ("Hit!");
 			speed = 0.0f;
 			particleSystem.Play();
+			this.audio.Play();
 			renderer.enabled = false;
 			hasHit = true;
 		}
+
 	}
 }
