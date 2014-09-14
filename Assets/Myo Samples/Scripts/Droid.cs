@@ -14,30 +14,34 @@ public class Droid : MonoBehaviour {
 		velocity = Vector3.zero;
 		initialPos = transform.position;
 		timeUntilShot = shotInterval;
+		renderer.enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		//bounce
-		velocity += Random.insideUnitSphere * speed;
-		velocity = new Vector3 (velocity.x,
-		                       velocity.y,
-		                       0);
-		transform.position += velocity;
-		Vector3 radiusVector = transform.position - initialPos;
-		if (radiusVector.magnitude > 10) {
-			transform.position -= velocity;
-			float magnitude = velocity.magnitude;
-			velocity = Random.insideUnitSphere * magnitude;
-		}
+		if (JointOrientation.gameRunning) {
+				renderer.enabled = true;
+				velocity += Random.insideUnitSphere * speed;
+				velocity = new Vector3 (velocity.x,
+                       velocity.y,
+                       0);
+				transform.position += velocity;
+				Vector3 radiusVector = transform.position - initialPos;
+				if (radiusVector.magnitude > 10) {
+						transform.position -= velocity;
+						float magnitude = velocity.magnitude;
+						velocity = Random.insideUnitSphere * magnitude;
+				}
 
-		//shot
-		timeUntilShot -= Time.deltaTime;
-		if (timeUntilShot < 0) {
-			GameObject l = (GameObject)Instantiate(laser, transform.position, Quaternion.identity);
-			l.GetComponent<Laser>().target = target.transform;
-			timeUntilShot += shotInterval;
-			shotInterval *= 0.97f;
+				//shot
+				timeUntilShot -= Time.deltaTime;
+				if (timeUntilShot < 0) {
+						GameObject l = (GameObject)Instantiate (laser, transform.position, Quaternion.identity);
+						l.GetComponent<Laser> ().target = target.transform;
+						timeUntilShot += shotInterval;
+						shotInterval *= 0.97f;
+				}
 		}
 	}
 }
