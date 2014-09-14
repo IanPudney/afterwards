@@ -19,7 +19,7 @@ public class Blade : MonoBehaviour
 	public float gameTime;
 	private float gameTimeRemaining;
 	public TextMesh scoreText;
-
+	public int maxhits = 20;
 	public int state = 0; //0=retracted, 1=extending, 2=extended, 3=retracting
 
 	
@@ -27,7 +27,7 @@ public class Blade : MonoBehaviour
 	public Material waveInMaterial;
 	public Material waveOutMaterial;
 	public Material thumbToPinkyMaterial;
-	
+	private bool undone = true;
 	// The pose from the last update. This is used to determine if the pose has changed
 	// so that actions are only performed upon making them rather than every frame during
 	// which they are active.
@@ -43,7 +43,15 @@ public class Blade : MonoBehaviour
 	{
 		// Access the ThalmicMyo component attached to the Myo game object.
 		ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo> ();
-		
+
+		ThalmicHub hub = ThalmicHub.instance;
+		if (JointOrientation.gameRunning == false && !thalmicMyo.armRecognized) {
+						scoreText.GetComponent<TextMesh> ().text = "Do setup\r\ngesture";
+				} else if(undone){
+					scoreText.GetComponent<TextMesh> ().text = "Grab the\r\nlightsaber";
+					undone = false;
+				}
+
 		// Check if the pose has changed since last update.
 		// The ThalmicMyo component of a Myo game object has a pose property that is set to the
 		// currently detected pose (e.g. Pose.Fist for the user making a fist). If no pose is currently
@@ -64,7 +72,7 @@ public class Blade : MonoBehaviour
 		}
 		if (JointOrientation.gameRunning) {
 			gameTime -= Time.deltaTime;
-			if(gameTime < 0) {
+			if(gameTime < 0 || hit == maxhits) {
 				scoreText.text = (deflected).ToString() + " Blocks\r\n" + 
 					(hit).ToString () + " Hits";
 				JointOrientation.gameRunning = false;
@@ -75,6 +83,7 @@ public class Blade : MonoBehaviour
 
 	void Extend () {
 		if (state == 1) {
+			scoreText.GetComponent<TextMesh> ().text = "";
 			if (nearlyEqual(transform.localScale.y, 3.0, 0.01)) {
 				state = 2;
 			} else {
