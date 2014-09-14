@@ -65,8 +65,7 @@ public class Blade : MonoBehaviour
 		if (JointOrientation.gameRunning) {
 			gameTime -= Time.deltaTime;
 			if(gameTime < 0) {
-				scoreText.text = "Score: " + (deflected*100).ToString() + "\r\n" +
-					(deflected).ToString() + " Blocks\r\n" + 
+				scoreText.text = (deflected).ToString() + " Blocks\r\n" + 
 					(hit).ToString () + " Hits";
 				JointOrientation.gameRunning = false;
 			}
