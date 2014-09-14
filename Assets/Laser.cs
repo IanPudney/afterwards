@@ -7,6 +7,7 @@ public class Laser : MonoBehaviour {
 	public float speed = 1f;
 	public Vector3 dir;
 	private bool hasHit = false;
+	public float life = 10f;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,10 @@ public class Laser : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		life -= Time.deltaTime;
+		if (life <= 0) {
+			Destroy(gameObject);
+		}
 		transform.Translate(dir * speed * Time.deltaTime, Space.World);
 		if (!hasHit && Vector3.Distance (target.position, transform.position) < 1f) {
 			Debug.Log ("Hit!");

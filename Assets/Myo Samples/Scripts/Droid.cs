@@ -10,6 +10,7 @@ public class Droid : MonoBehaviour {
 	public GameObject laser;
 	public GameObject target;
 	private float timeUntilShot;
+	public float  minimum = 0.03f;
 	void Start () {
 		velocity = Vector3.zero;
 		initialPos = transform.position;
@@ -40,8 +41,13 @@ public class Droid : MonoBehaviour {
 						GameObject l = (GameObject)Instantiate (laser, transform.position, Quaternion.identity);
 						l.GetComponent<Laser> ().target = target.transform;
 						timeUntilShot += shotInterval;
+						
 						shotInterval *= 0.97f;
-				}
+						
+						if(shotInterval < minimum){
+							shotInterval = minimum;
+						}
+			}
 		}
 	}
 }
