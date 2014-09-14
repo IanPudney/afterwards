@@ -26,6 +26,9 @@ public class Laser : MonoBehaviour {
 			hasHit = true;
 			Blade.hit += 1;
 		}
+		if (!JointOrientation.gameRunning) {
+			dir = Vector3.zero;
+		}
 
 	}
 }

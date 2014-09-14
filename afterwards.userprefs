@@ -2,10 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Myo Samples\Scripts\Blade.cs">
     <Files>
-      <File FileName="Assets\Laser.cs" Line="1" Column="1" />
-      <File FileName="Assets\Myo Samples\Scripts\Blade.cs" Line="46" Column="9" />
+      <File FileName="Assets\Laser.cs" Line="27" Column="19" />
+      <File FileName="Assets\Myo Samples\Scripts\Blade.cs" Line="67" Column="5" />
       <File FileName="Assets\Myo\Scripts\ThalmicMyo.cs" Line="45" Column="1" />
-      <File FileName="Assets\Deflect.cs" Line="20" Column="23" />
+      <File FileName="Assets\Deflect.cs" Line="9" Column="14" />
       <File FileName="Assets\Myo Samples\Scripts\Droid.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

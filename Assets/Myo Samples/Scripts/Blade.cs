@@ -18,6 +18,7 @@ public class Blade : MonoBehaviour
 	public static int hit = 0;
 	public float gameTime;
 	private float gameTimeRemaining;
+	public TextMesh scoreText;
 
 	public int state = 0; //0=retracted, 1=extending, 2=extended, 3=retracting
 
@@ -64,7 +65,10 @@ public class Blade : MonoBehaviour
 		if (JointOrientation.gameRunning) {
 			gameTime -= Time.deltaTime;
 			if(gameTime < 0) {
-
+				scoreText.text = "Score: " + (deflected*100).ToString() + "\r\n" +
+					(deflected).ToString() + " Blocks\r\n" + 
+					(hit).ToString () + " Hits";
+				JointOrientation.gameRunning = false;
 			}
 		}
 		Extend ();
