@@ -43,9 +43,11 @@ public class Blade : MonoBehaviour
 			_lastPose = thalmicMyo.pose;
 			
 			// Vibrate the Myo armband when a fist is made.
-			if (thalmicMyo.pose == Pose.Fist || thalmicMyo.pose == Pose.FingersSpread || Input.GetKey("p")) {
-				//thalmicMyo.Vibrate (VibrationType.Medium);
+			if (!JointOrientation.gameRunning &&
+				(thalmicMyo.pose == Pose.Fist || Input.GetKey("p"))) {
+				thalmicMyo.Vibrate (VibrationType.Medium);
 				state = 1;
+				audio.Play ();
 				JointOrientation.gameRunning = true;
 			} 
 		}
