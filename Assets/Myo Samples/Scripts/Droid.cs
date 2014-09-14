@@ -23,15 +23,12 @@ public class Droid : MonoBehaviour {
 		velocity = new Vector3 (velocity.x,
 		                       velocity.y,
 		                       0);
-		Debug.Log (velocity.ToString ());
 		transform.position += velocity;
 		Vector3 radiusVector = transform.position - initialPos;
 		if (radiusVector.magnitude > 10) {
 			transform.position -= velocity;
-			Debug.Log ("Boom " + velocity.ToString());
 			float magnitude = velocity.magnitude;
 			velocity = Random.insideUnitSphere * magnitude;
-			Debug.Log ("Boom2 " + velocity.ToString());
 		}
 
 		//shot

@@ -15,6 +15,11 @@ public class Deflect : MonoBehaviour {
 
 		other.GetComponent<Laser>().dir = -other.GetComponent<Laser>().dir*2;
 		ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo> ();
-		thalmicMyo.Vibrate (VibrationType.Short);
+		try {
+			thalmicMyo.Vibrate (VibrationType.Short);
+		} catch (NullReferenceException ex) {
+			/*...*/
+		}
+
 	}
 }

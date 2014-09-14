@@ -41,13 +41,11 @@ public class Blade : MonoBehaviour
 		// is not on a user's arm, pose will be set to Pose.Unknown.
 		if (thalmicMyo.pose != _lastPose || Input.GetKey ("p")) {
 			_lastPose = thalmicMyo.pose;
-			Debug.Log("New Pose! " + thalmicMyo.pose.ToString());
 			
 			// Vibrate the Myo armband when a fist is made.
 			if (thalmicMyo.pose == Pose.Fist || thalmicMyo.pose == Pose.FingersSpread || Input.GetKey("p")) {
 				//thalmicMyo.Vibrate (VibrationType.Medium);
 				state = 1;
-				Debug.Log ("Posed!");
 				JointOrientation.gameRunning = true;
 			} 
 		}
