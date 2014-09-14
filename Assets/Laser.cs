@@ -29,6 +29,10 @@ public class Laser : MonoBehaviour {
 			this.audio.Play();
 			renderer.enabled = false;
 			hasHit = true;
+			Blade.hit += 1;
+		}
+		if (!JointOrientation.gameRunning) {
+			dir = Vector3.zero;
 		}
 
 	}

@@ -18,6 +18,7 @@ public class Deflect : MonoBehaviour {
 		try {
 			thalmicMyo.Vibrate (VibrationType.Short);
 			this.audio.Play ();
+			Blade.deflected += 1;
 		} catch (NullReferenceException ex) {
 			/*...*/
 		}
