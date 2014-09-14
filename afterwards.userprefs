@@ -1,11 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Laser.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\OVR\Scripts\OVRGamepadController.cs">
     <Files>
-      <File FileName="Assets\Laser.cs" Line="21" Column="1" />
-      <File FileName="Assets\Myo Samples\Scripts\Blade.cs" Line="45" Column="14" />
-      <File FileName="Assets\Myo\Scripts\ThalmicMyo.cs" Line="45" Column="1" />
-      <File FileName="Assets\Deflect.cs" Line="23" Column="3" />
+      <File FileName="..\..\Foreward\Assets\Fun.cs" Line="12" Column="18" />
+      <File FileName="Assets\OVR\Scripts\OVRGamepadController.cs" Line="95" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
