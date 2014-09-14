@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{F2D6ED13-4C88-CD94-9D03-D97CFBA67AE5}</ProjectGuid>
+	<ProjectGuid>{A811DBC6-4774-EE99-08E6-851EDA6B8406}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-UnityScript-Editor</AssemblyName>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,19 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Editor\Image Effects\AntialiasingAsPostEffectEditor.js" />
-     <Compile Include="Assets\Editor\Image Effects\BloomAndLensFlaresEditor.js" />
-     <Compile Include="Assets\Editor\Image Effects\BloomEditor.js" />
-     <Compile Include="Assets\Editor\Image Effects\CameraMotionBlurEditor.js" />
-     <Compile Include="Assets\Editor\Image Effects\ColorCorrectionCurvesEditor.js" />
-     <Compile Include="Assets\Editor\Image Effects\ColorCorrectionLutEditor.js" />
-     <Compile Include="Assets\Editor\Image Effects\DepthOfField34Editor.js" />
-     <Compile Include="Assets\Editor\Image Effects\DepthOfFieldScatterEditor.js" />
-     <Compile Include="Assets\Editor\Image Effects\EdgeDetectEffectNormalsEditor.js" />
-     <Compile Include="Assets\Editor\Image Effects\NoiseAndGrainEditor.js" />
-     <Compile Include="Assets\Editor\Image Effects\SunShaftsEditor.js" />
-     <Compile Include="Assets\Editor\Image Effects\TonemappingEditor.js" />
-     <Compile Include="Assets\Editor\Image Effects\VignettingEditor.js" />
+     <Compile Include="Assets\XYZDisplay.js" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Plugins\donotdelete.txt" />
@@ -133,18 +121,12 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
- <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Ian/Documents/code/afterwards/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.Graphs">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
- </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
-      <Project>{BD7250D0-5942-45D6-6BA5-27A0B594A534}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp-vs.csproj">
-      <Project>{B7DD015D-ED7A-CCCB-4738-72AE5EDBCF49}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{BD7250D0-5942-45D6-6BA5-27A0B594A534}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{7AD7008B-EDCA-506F-BB8A-8E9F69DFB846}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
